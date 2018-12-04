@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phycomgame.FXMLDocumentController">
    <top>
       <Label prefHeight="77.0" prefWidth="313.0" text="        Phycom Fits Everywhere" textFill="#0a48da" BorderPane.alignment="CENTER">
          <font>
@@ -19,9 +18,27 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="223.0" prefWidth="160.0" />
-            <VBox prefHeight="223.0" prefWidth="181.0" />
-            <VBox prefHeight="223.0" prefWidth="258.0" />
+            <VBox alignment="TOP_CENTER" prefHeight="269.0" prefWidth="233.0">
+               <children>
+                  <Label fx:id="enunciado" alignment="CENTER" prefHeight="269.0" prefWidth="226.0" text="Label" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Unicode MS" size="12.0" />
+                     </font></Label>
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="269.0" prefWidth="151.0">
+               <children>
+                  <Label alignment="CENTER" text="Opciones:" />
+                  <RadioButton fx:id="rb1" mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton fx:id="rb2" mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton fx:id="rb3" mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton fx:id="rb4" mnemonicParsing="false" prefHeight="22.0" prefWidth="87.0" text="RadioButton" />
+                  <Label fx:id="admiracion" alignment="CENTER" lineSpacing="20.0" prefHeight="139.0" prefWidth="145.0" text="Label" textAlignment="CENTER" />
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="269.0" prefWidth="231.0" spacing="20.0">
+               <children>
+                  <Button fx:id="responder" alignment="BOTTOM_CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#enviarRespuesta" text="Responder" />
+                  <Button fx:id="iniciar" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#iniciarReto" text="Iniciar" />
+               </children></VBox>
          </children>
       </HBox>
    </center>
@@ -29,7 +46,7 @@
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" prefHeight="64.0" prefWidth="138.0" text="Time: " />
-            <Label alignment="CENTER" prefHeight="68.0" prefWidth="37.0" text="Label" />
+            <Label fx:id="conteo" alignment="CENTER" prefHeight="68.0" prefWidth="37.0" text="Label" />
          </children>
       </HBox>
    </bottom>
