@@ -23,7 +23,7 @@ public class PhycomGame extends Application {
         
         Scene scene = new Scene(root);
         
-        scene.getStylesheets().add("Estilos.css");
+        
         stage.setScene(scene);
         stage.show();
     }

@@ -19,6 +19,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+import phycomgame.model.Reloj;
 import phycomgame.model.Reto;
 import phycomgame.model.RetoEscribir;
 
@@ -32,6 +33,7 @@ public class FXMLDocumentController implements Initializable {
     
     ArrayList<Reto> retos = new ArrayList<>();
     Reto retoActual;
+    Reloj reloj;
     
     @FXML
     private Label enunciado ;
@@ -71,6 +73,8 @@ public class FXMLDocumentController implements Initializable {
                 this.rb3.setText("Empty");
                 this.rb4.setText("Empty");
                 
+                reloj = new Reloj("0",0,1,this.conteo);
+                reloj.iniciar();
                 this.retoActual = retos.get(i);
                 return;
                 
@@ -87,6 +91,8 @@ public class FXMLDocumentController implements Initializable {
                 this.rb4.setText(retos.get(i).getOpciones().get(3));
                 
                 this.retoActual = retos.get(i);
+                reloj = new Reloj("0",0,2,this.conteo);
+                reloj.iniciar();
                 return;
        
                 
@@ -102,6 +108,7 @@ public class FXMLDocumentController implements Initializable {
                 || (this.retoActual.getOpciones() == null && this.respuesta.getText().equalsIgnoreCase(this.retoActual.getRespuesta()))){
             this.retoActual.setCompletado(true);
             this.admiracion.setText("Has Acertado!");
+            reloj = new Reloj("0",0,0,this.conteo);
         }
         else
         this.admiracion.setText("Intentalo de nuevo");
