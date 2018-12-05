@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/12/2018, 1:38:43
+    Author     : Israel
+*/
+
+.root{
+    
+    -fx-background-image: url('fondoP.jpg')
+    
+}
+
+.button{
+    
+    -fx-background-color: #B0EFF3 ;
+    -fx-text-fill: #010101;
+    
+}
+
+.label{
+    
+    -fx-text-fill: #B0EFF3;
+}

@@ -16,9 +16,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import phycomgame.model.Reto;
+import phycomgame.model.RetoEscribir;
 
 /**
  *
@@ -52,12 +54,27 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label admiracion;
     
+    @FXML
+    private TextField respuesta;
     
     @FXML
     public void iniciarReto() {
        
         for(int i = 0;i<retos.size();i++){
-        
+            if(retos.get(i).getOpciones() == null && !retos.get(i).isCompletado()){
+            
+                this.enunciado.setText(retos.get(i).getEnunciado());
+                this.conteo.setText("0");
+                
+                this.rb1.setText("Empty");
+                this.rb2.setText("Empty");
+                this.rb3.setText("Empty");
+                this.rb4.setText("Empty");
+                
+                this.retoActual = retos.get(i);
+                return;
+                
+            }
             if(!retos.get(i).isCompletado()){
                 
                 
@@ -70,18 +87,19 @@ public class FXMLDocumentController implements Initializable {
                 this.rb4.setText(retos.get(i).getOpciones().get(3));
                 
                 this.retoActual = retos.get(i);
-                break;
+                return;
        
                 
             }
         }
-        
+        System.exit(0);
         
     }
     
     @FXML
     public void enviarRespuesta(){
-        if(((RadioButton)this.group.getSelectedToggle()).getText().equalsIgnoreCase(this.retoActual.getRespuesta())){
+        if(((RadioButton)this.group.getSelectedToggle()).getText().equalsIgnoreCase(this.retoActual.getRespuesta())
+                || (this.retoActual.getOpciones() == null && this.respuesta.getText().equalsIgnoreCase(this.retoActual.getRespuesta()))){
             this.retoActual.setCompletado(true);
             this.admiracion.setText("Has Acertado!");
         }
@@ -111,8 +129,10 @@ public class FXMLDocumentController implements Initializable {
         
         
         reto = new Reto(enunciado,opciones,"you");
+        retos.add(reto);
         
-        
+        enunciado = "mamamamamamam";
+        reto = new RetoEscribir(enunciado,null,"mami");
         retos.add(reto);
         
         return retos;
@@ -121,6 +141,14 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
+       this.enunciado.setText("Empty");
+       this.conteo.setText("0");
+                
+       this.rb1.setText("Empty");
+       this.rb2.setText("Empty");
+       this.rb3.setText("Empty");
+       this.rb4.setText("Empty");
        this.retos = this.hacerPreguntas();
        this.admiracion.setText("");
        this.rb1.setToggleGroup(group);

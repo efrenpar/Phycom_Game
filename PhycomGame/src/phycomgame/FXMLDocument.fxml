@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="446.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phycomgame.FXMLDocumentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="689.0" stylesheets="@Estilos.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phycomgame.FXMLDocumentController">
    <top>
-      <Label prefHeight="77.0" prefWidth="313.0" text="        Phycom Fits Everywhere" textFill="#0a48da" BorderPane.alignment="CENTER">
+      <Label prefHeight="77.0" prefWidth="313.0" text="        Phycom Fits Everywhere!" textFill="#0a48da" BorderPane.alignment="CENTER">
          <font>
             <Font size="22.0" />
          </font>
@@ -18,35 +18,81 @@
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="269.0" prefWidth="233.0">
+            <VBox alignment="TOP_CENTER" prefHeight="342.0" prefWidth="249.0" spacing="10.0">
                <children>
-                  <Label fx:id="enunciado" alignment="CENTER" prefHeight="269.0" prefWidth="226.0" text="Label" textAlignment="CENTER">
+                  <Label fx:id="enunciado" alignment="CENTER" prefHeight="276.0" prefWidth="249.0" text="Label" textAlignment="CENTER" textFill="#fccf08">
                      <font>
-                        <Font name="Arial Unicode MS" size="12.0" />
+                        <Font name="Arial Unicode MS" size="18.0" />
+                     </font></Label>
+                  <Pane prefHeight="46.0" prefWidth="249.0">
+                     <children>
+                        <Label layoutX="75.0" layoutY="17.0" text="Respuesta" textFill="#fccf08">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="48.0" prefWidth="249.0">
+                     <children>
+                        <TextField fx:id="respuesta" layoutX="50.0" layoutY="9.0" />
+                     </children>
+                  </Pane>
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="394.0" prefWidth="292.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER" text="Opciones:" textFill="#fccf08">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+                  <Pane prefHeight="206.0" prefWidth="215.0">
+                     <children>
+                        <RadioButton fx:id="rb4" layoutX="66.0" layoutY="158.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="174.0" text="RadioButton" textFill="#b0eff3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rb3" layoutX="66.0" layoutY="119.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="179.0" text="RadioButton" textFill="#b0eff3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rb2" layoutX="67.0" layoutY="82.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="178.0" text="RadioButton" textFill="#b0eff3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rb1" layoutX="66.0" layoutY="43.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="177.0" text="RadioButton" textFill="#b0eff3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </RadioButton>
+                     </children>
+                  </Pane>
+                  <Label fx:id="admiracion" alignment="CENTER" lineSpacing="20.0" prefHeight="139.0" prefWidth="280.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
                      </font></Label>
                </children></VBox>
-            <VBox alignment="CENTER" prefHeight="269.0" prefWidth="151.0">
+            <VBox alignment="CENTER" prefHeight="394.0" prefWidth="177.0" spacing="20.0">
                <children>
-                  <Label alignment="CENTER" text="Opciones:" />
-                  <RadioButton fx:id="rb1" mnemonicParsing="false" text="RadioButton" />
-                  <RadioButton fx:id="rb2" mnemonicParsing="false" text="RadioButton" />
-                  <RadioButton fx:id="rb3" mnemonicParsing="false" text="RadioButton" />
-                  <RadioButton fx:id="rb4" mnemonicParsing="false" prefHeight="22.0" prefWidth="87.0" text="RadioButton" />
-                  <Label fx:id="admiracion" alignment="CENTER" lineSpacing="20.0" prefHeight="139.0" prefWidth="145.0" text="Label" textAlignment="CENTER" />
-               </children></VBox>
-            <VBox alignment="CENTER" prefHeight="269.0" prefWidth="231.0" spacing="20.0">
-               <children>
-                  <Button fx:id="responder" alignment="BOTTOM_CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#enviarRespuesta" text="Responder" />
-                  <Button fx:id="iniciar" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#iniciarReto" text="Iniciar" />
+                  <Button fx:id="responder" alignment="BOTTOM_CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#enviarRespuesta" text="Responder" textFill="#fccf08" />
+                  <Button fx:id="iniciar" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#iniciarReto" text="Avanzar" textFill="#fccf08" />
                </children></VBox>
          </children>
       </HBox>
    </center>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="63.0" prefWidth="689.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="64.0" prefWidth="138.0" text="Time: " />
-            <Label fx:id="conteo" alignment="CENTER" prefHeight="68.0" prefWidth="37.0" text="Label" />
+            <Label alignment="CENTER" prefHeight="63.0" prefWidth="88.0" text="Time: " textFill="#fccf08">
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
+            <Label fx:id="conteo" alignment="CENTER" prefHeight="63.0" prefWidth="110.0" text="Label" textFill="#fccf08">
+               <font>
+                  <Font size="17.0" />
+               </font></Label>
          </children>
       </HBox>
    </bottom>

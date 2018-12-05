@@ -5,10 +5,16 @@
  */
 package phycomgame.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Israel
  */
-public class RetoEscribir {
+public class RetoEscribir extends Reto{
+    
+    public RetoEscribir(String enunciado, ArrayList<String> opciones, String respuesta) {
+        super(enunciado, opciones, respuesta);
+    }
     
 }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Reto {
     protected String enunciado;
-    protected ArrayList<String> opciones;
+    private ArrayList<String> opciones;
     protected String respuesta;
     protected boolean completado = false;
 
